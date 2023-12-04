@@ -113,6 +113,9 @@ void loop()
   }
   if(dartCount && analogRead(0) < 50 && analogRead(1) < 50)
   {
+    // block interrupt routines
+    hit[0] = true;
+    hit[1] = true;
     delay(500);
     if (analogRead(0) < 50 && analogRead(1) < 50)
     {
@@ -127,9 +130,10 @@ void loop()
       velocityMax = 0;
       delay(3000);
       printDisplay(0, 0);
-      hit[0] = false;
-      hit[1] = false;
     }
+    // release interrupt routines
+    hit[0] = false;
+    hit[1] = false;
   }
   if (hit[0] && hit[1])
   {
