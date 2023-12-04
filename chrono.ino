@@ -19,7 +19,6 @@ void firstTrigger()
   if (!hit[0])
   {
     timeStamp[0] = micros();
-    //Serial.println(analogRead(0));
     hit[0] = true;
   }
 }
@@ -29,7 +28,6 @@ void secondTrigger()
   if (hit[0] && !hit[1])
   {
     timeStamp[1] = micros();
-    //Serial.println(analogRead(1));
     hit[1] = true;
   }
 }
@@ -99,9 +97,8 @@ void setup()
   }
   display.display();
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
-  display.clearDisplay();     // Clear display
+  display.clearDisplay();
   display.setTextColor(SSD1306_WHITE);
-  Serial.println("Startup done");
   printDisplay(0, 0);
 }
 
@@ -124,9 +121,6 @@ void loop()
       display.setCursor(22, 8);
       display.print("reset");
       display.display();
-      Serial.println("Resetting dart counter");
-      Serial.println(analogRead(0));
-      Serial.println(analogRead(1));
       dartCount = 0;
       velocitySum = 0;
       velocityMin = 0;
