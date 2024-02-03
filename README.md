@@ -10,7 +10,7 @@ Pinout of Arduino Nano:
 
 - D2/INT0: Digital Out of second sensor
 - D3/INT1: Digital Out of first sensor
-- A0: Analog Out of sencond sensor
+- A0: Analog Out of second sensor
 - A1: Analog Out of first sensor
 - A4/SDA: Display SDA Pin
 - A5/SCL: Display SCL Pin
